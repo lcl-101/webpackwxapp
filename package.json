@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "env NODE_ENV=development node_modules/.bin/webpack --watch --env.target=Alipay",
     "dev": "env NODE_ENV=development node_modules/.bin/webpack --env.target=blog",
     "build": "env NODE_ENV=production node_modules/.bin/webpack --env.target=blog --env.min"
   },
