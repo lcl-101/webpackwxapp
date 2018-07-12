@@ -1,10 +1,10 @@
-var WxParse = require('../../wxParse/wxParse.js');
 const app = getApp();
 Page({
   data:{
     listId:'',
     loading:true,
-    listData:''
+    listData:'',
+    artileDate:''
   },
   onLoad: function(){
     var that = this;
@@ -31,6 +31,7 @@ Page({
     });
   },
   getList: function(id,data){
+    console.log(data);
     var that = this;
     that.setData({
       listId:id,
@@ -40,7 +41,13 @@ Page({
     for(var i=0;i<data.length;i++){
       if(that.options.id == data[i].id){
           var articles = data[i].body;
-          WxParse.wxParse('article', 'md', articles, that, 5);
+          //将markdown内容转换为towxml数据
+          let articdata = app.towxml.toJson(articles,'markdown');
+          //设置文档显示主题，默认'light'
+          articdata.theme = 'light';
+          that.setData({
+            artileDate:articdata
+          });
       }
     }
   },

@@ -1,269 +1,407 @@
-/**
- * author: Di (微信小程序开发工程师)
- * organization: WeAppDev(微信小程序开发论坛)(http://weappdev.com)
- *               垂直微信小程序开发交流社区
- *
- * github地址: https://github.com/icindy/wxParse
- *
- * for: 微信小程序富文本解析
- * detail : http://weappdev.com/t/wxparse-alpha0-1-html-markdown/184
- */
-.wxParse {
-  margin: 0 5px;
-  font-family: Helvetica, sans-serif;
-  font-size: 28rpx;
-  color: #666;
+.h2w {
+  font-family: "STHeitiTC-Light", "Microsoft YaHei Light", "Hiragino Sans GB", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 32rpx;
   line-height: 1.8;
-}
-view {
+  word-wrap: break-word;
   word-break: break-all;
-  overflow: auto;
 }
-.wxParse-inline {
+.h2w__main {
+  margin: 0 40rpx;
+  padding-top: 40rpx;
+}
+/**标题**/
+.h2w__h1,
+.h2w__h2,
+.h2w__h3,
+.h2w__h4,
+.h2w__h5,
+.h2w__h6 {
+  font-weight: bold;
+}
+.h2w__h1 {
+  border-bottom-style: double;
+  border-bottom-width: 6rpx;
+  font-size: 42rpx;
+  padding-bottom: 10rpx;
+  margin-bottom: 20rpx;
+}
+.h2w__h2 {
+  border-bottom-style: solid;
+  border-bottom-width: 1rpx;
+  font-size: 40rpx;
+  padding-bottom: 8rpx;
+  margin-bottom: 18rpx;
+}
+.h2w__h3 {
+  font-size: 38rpx;
+  padding-bottom: 6rpx;
+  margin-bottom: 12rpx;
+}
+.h2w__h4 {
+  font-size: 36rpx;
+  padding-bottom: 4rpx;
+  margin-bottom: 12rpx;
+}
+.h2w__h5 {
+  font-size: 34rpx;
+  padding-bottom: 2rpx;
+  margin-bottom: 12rpx;
+}
+.h2w__h6 {
+  margin-bottom: 12rpx;
+}
+/**表格**/
+.h2w__table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  display: table;
+  margin-bottom: 40rpx;
+}
+.h2w__table .h2w__tr:nth-child(2n) {
+  background-color: red;
+}
+.h2w__colgroup {
+  display: table-column-group;
+}
+.h2w__col {
+  display: table-column;
+}
+.h2w__thead {
+  display: table-header-group;
+}
+.h2w__tbody {
+  display: table-row-group;
+}
+.h2w__tfoot {
+  display: table-footer-group;
+}
+.h2w__tr {
+  display: table-row;
+}
+.h2w__th,
+.h2w__td {
+  padding: 8rpx 16rpx;
+  font-size: 28rpx;
+  border-width: 1rpx;
+  border-style: solid;
+  display: table-cell;
+}
+.h2w__th {
+  font-weight: bold;
+}
+/**代码块**/
+.h2w__pre {
+  /*white-space:nowrap;*/
+  padding: 20rpx;
+  font-size: 28rpx;
+  word-break: normal;
+  border-width: 1rpx;
+  border-style: solid;
+  margin-bottom: 40rpx;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+.h2w__pre .h2w__code {
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+}
+.h2w__pre,
+.h2w__code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, "STHeitiTC-Light", "Microsoft YaHei Light", -apple-system, system-ui, BlinkMacSystemFont;
+}
+.h2w__code {
+  padding: 4rpx 8rpx;
+  margin: 0 4rpx;
+  border-width: 1rpx;
+  border-style: solid;
+  border-radius: 8rpx;
+  font-size: 80%;
+  overflow-x: auto;
+}
+.h2w__pre .h2w__span,
+.h2w__pre .h2w__a,
+.h2w__pre .h2w__span,
+.h2w__pre .h2w__b,
+.h2w__pre .h2w__strong,
+.h2w__pre .h2w__i,
+.h2w__pre .h2w__em {
   display: inline;
-  margin: 0;
-  padding: 0;
 }
-/*//标题 */
-.wxParse-div {
-  margin: 0;
-  padding: 0;
+.h2w__pre .h2w__code {
+  white-space: pre;
+  width: 9999px;
+  display: block;
+  font-size: 80%;
 }
-.wxParse-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
+/**列表**/
+.h2w__ul,
+.h2w__ol {
+  margin-bottom: 40rpx;
+  padding-left: 1rem;
 }
-.wxParse-h2 {
-  font-size: 1.5em;
-  margin: 0.75em 0;
+.h2w__ul .h2w__ol,
+.h2w__ol .h2w__ul {
+  margin-bottom: 0;
 }
-.wxParse-h3 {
-  font-size: 1.17em;
-  margin: 0.83em 0;
+.h2w__li {
+  display: list-item;
 }
-.wxParse-h4 {
-  margin: 1.12em 0;
+/**todo**/
+.h2w__todogroup {
+  margin-bottom: 40rpx;
 }
-.wxParse-h5 {
-  font-size: 0.83em;
-  margin: 1.5em 0;
+.h2w__todogroup .h2w__todogroup {
+  padding-left: 1.6rem;
 }
-.wxParse-h6 {
-  font-size: 0.75em;
-  margin: 1.67em 0;
+/**一级ol样式**/
+.h2w__ol {
+  list-style-type: decimal;
 }
-.wxParse-h1 {
-  font-size: 18px;
-  font-weight: 400;
-  margin-bottom: 0.9em;
+/**二级ol样式**/
+.h2w__ul .h2w__ol,
+.h2w__ol .h2w__ol {
+  list-style-type: lower-roman;
 }
-.wxParse-h2 {
-  font-size: 16px;
-  font-weight: 400;
-  margin-bottom: 0.34em;
+/**三级ol样式**/
+.h2w__ul .h2w__ul .h2w__ol,
+.h2w__ul .h2w__ol .h2w__ol,
+.h2w__ol .h2w__ul .h2w__ol,
+.h2w__ol .h2w__ol .h2w__ol {
+  list-style-type: lower-alpha;
 }
-.wxParse-h3 {
-  font-weight: 400;
-  font-size: 15px;
-  margin-bottom: 0.34em;
+/**一级ul样式**/
+.h2w__ul {
+  list-style-type: disc;
 }
-.wxParse-h4 {
-  font-weight: 400;
-  font-size: 14px;
-  margin-bottom: 0.24em;
+/**二级ul样式**/
+.h2w__ul .h2w__ul,
+.h2w__ol .h2w__ul {
+  list-style-type: circle;
 }
-.wxParse-h5 {
-  font-weight: 400;
-  font-size: 13px;
-  margin-bottom: 0.14em;
+/**三级样式**/
+.h2w__ol .h2w__ol .h2w__ul,
+.h2w__ol .h2w__ul .h2w__ul,
+.h2w__ul .h2w__ol .h2w__ul,
+.h2w__ul .h2w__ul .h2w__ul {
+  list-style-type: square;
 }
-.wxParse-h6 {
-  font-weight: 400;
-  font-size: 12px;
-  margin-bottom: 0.04em;
+/**块元素**/
+.h2w__p {
+  margin-bottom: 40rpx;
+  /*word-wrap:break-word;
+    word-break:break-all;*/
+  /*text-align:justify;*/
 }
-.wxParse-h1,
-.wxParse-h2,
-.wxParse-h3,
-.wxParse-h4,
-.wxParse-h5,
-.wxParse-h6,
-.wxParse-b,
-.wxParse-strong {
-  font-weight: bolder;
+.h2w__div {
+  /*text-align:justify;*/
 }
-.wxParse-i,
-.wxParse-cite,
-.wxParse-em,
-.wxParse-var,
-.wxParse-address {
+.h2w__blockquote {
+  border-left-width: 8rpx;
+  border-left-style: solid;
+  padding: 0 20rpx;
+}
+/**内连元素**/
+.h2w__a,
+.h2w__span,
+.h2w__b,
+.h2w__strong,
+.h2w__i,
+.h2w__em {
+  display: inline;
+}
+.h2w__b,
+.h2w__strong {
+  font-weight: bold;
+}
+.h2w__i,
+.h2w__em {
   font-style: italic;
 }
-.wxParse-pre,
-.wxParse-tt,
-.wxParse-code,
-.wxParse-kbd,
-.wxParse-samp {
-  font-family: monospace;
-}
-.wxParse-pre {
-  white-space: pre;
-  margin: 10px 0;
-}
-.wxParse-big {
-  font-size: 1.17em;
-}
-.wxParse-small,
-.wxParse-sub,
-.wxParse-sup {
-  font-size: 0.83em;
-}
-.wxParse-sub {
-  vertical-align: sub;
-}
-.wxParse-sup {
-  vertical-align: super;
-}
-.wxParse-s,
-.wxParse-strike,
-.wxParse-del {
+/**文本删除线**/
+.h2w__s,
+.h2w__strike,
+.h2w__del {
   text-decoration: line-through;
 }
-/*wxparse-自定义个性化的css样式*/
-/*增加video的css样式*/
-.wxParse-strong,
-.wxParse-s {
-  display: inline;
-}
-.wxParse-a {
-  color: deepskyblue;
-  word-break: break-all;
-  overflow: auto;
-}
-.wxParse-video {
-  text-align: center;
-  margin: 10px 0;
-}
-.wxParse-video-video {
-  width: 100%;
-}
-.wxParse-img {
-  /*background-color: #efefef;*/
-  overflow: hidden;
-  width: 94%!important;
-  max-width: 100%;
-  max-height: 100%;
-  display: block;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
-  -webkit-box-shadow: 0 0 10px #555;
-  box-shadow: 0 0 10px #555;
-  margin: 0 auto;
-  margin-top: 20px;
-  margin-bottom: 30px;
-}
-.wxParse-blockquote {
-  margin: 0;
-  padding: 10px 0 10px 5px;
-  font-family: Courier, Calibri, "宋体";
-  background: #f5f5f5;
-  border-left: 3px solid #dbdbdb;
-}
-.wxParse-code,
-.wxParse-wxxxcode-style {
-  display: inline;
-  background: #f5f5f5;
-}
-.wxParse-ul {
-  margin: 20rpx 10rpx;
-}
-.wxParse-li,
-.wxParse-li-inner {
-  display: flex;
-  align-items: baseline;
-  margin: 10rpx 0;
-}
-.wxParse-li-text {
-  align-items: center;
-  line-height: 20px;
-  overflow: visible;
-}
-.wxParse-li-circle {
-  display: inline-flex;
-  width: 14px;
-  margin-right: 5px;
-  text-align: left;
-  color: #337ab7;
-  overflow: visible;
-}
-.wxParse-li-square {
-  display: inline-flex;
-  width: 10rpx;
-  height: 10rpx;
-  background-color: #333;
-  margin-right: 5px;
-}
-.wxParse-li-ring {
-  display: inline-flex;
-  width: 10rpx;
-  height: 10rpx;
-  border: 2rpx solid #333;
-  border-radius: 50%;
-  background-color: #fff;
-  margin-right: 5px;
-}
-/*.wxParse-table{
-    width: 100%;
-    height: 400px;
-}
-.wxParse-thead,.wxParse-tfoot,.wxParse-tr{
-    display: flex;
-    flex-direction: row;
-}
-.wxParse-th,.wxParse-td{
-    display: flex;
-    width: 580px;
-    overflow: auto;
-}*/
-.wxParse-u {
+/**文本下划线**/
+.h2w__ins,
+.h2w__u {
   text-decoration: underline;
 }
-.wxParse-hide {
-  display: none;
+/**链接**/
+.h2w__a {
+  margin: 0 8rpx;
+  border-bottom-width: 1rpx;
+  border-bottom-style: solid;
+  line-height: 1;
 }
-.WxEmojiView {
-  align-items: center;
+.h2w__hr {
+  height: 8rpx;
+  margin: 40rpx 0;
 }
-.wxEmoji {
-  width: 16px;
-  height: 16px;
+/**荧光标记**/
+.h2w__mark {
+  border-radius: 4rpx;
 }
-.wxParse-tr {
-  display: flex;
-  border-right: 1px solid #e0e0e0;
-  border-bottom: 1px solid #e0e0e0;
-  border-top: 1px solid #e0e0e0;
+/**上标、下标**/
+.h2w__sup,
+.h2w__sub {
+  font-size: 75%;
+  position: relative;
 }
-.wxParse-th,
-.wxParse-td {
-  flex: 1;
-  padding: 5px;
-  font-size: 28rpx;
-  border-left: 1px solid #e0e0e0;
-  word-break: break-all;
+.h2w__sup {
+  top: -0.5em;
 }
-.wxParse-td:last {
-  border-top: 1px solid #e0e0e0;
+.h2w__sub {
+  bottom: -0.25em;
 }
-.wxParse-th {
-  background: #f0f0f0;
-  border-top: 1px solid #e0e0e0;
+/**emoji表情**/
+.h2w__g-emoji {
+  margin: 0 0.1em;
+  font-family: "Apple Color Emoji", "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol";
 }
-.wxParse-del {
-  display: inline;
+/**内置元素**/
+image,
+video {
+  width: 100%;
+  margin: 0 auto 20rpx auto;
 }
-.wxParse-figure {
-  overflow: hidden;
+image {
+  height: auto;
+}
+video {
+  height: 220px;
+}
+/**主题配色（浅色样式）**/
+.h2w-light {
+  color: #333;
+  background-color: white;
+}
+/**标题**/
+.h2w-light .h2w__h1,
+.h2w-light .h2w__h2 {
+  border-color: #eee;
+}
+/**表格**/
+.h2w-light .h2w__thead .h2w__tr {
+  background-color: #f6f8fa;
+}
+.h2w-light .h2w__table .h2w__tr:nth-child(2n) {
+  background-color: #fbfcfd;
+}
+.h2w-light .h2w__th,
+.h2w-light .h2w__td {
+  border-color: #dfe2e5;
+}
+/**代码块**/
+.h2w-light .h2w__pre {
+  background-color: #f6f8fa;
+  border-color: #eaedf0;
+}
+.h2w-light .h2w__code {
+  background-color: #f6f8fa;
+  border-color: #eaedf0;
+}
+/**块元素**/
+.h2w-light .h2w__blockquote {
+  border-left-color: #dfe2e5;
+}
+/**内连元素**/
+.h2w-light .h2w__a {
+  color: #1aad16;
+  border-color: #b9d9b8;
+}
+.h2w-light .h2w__hr {
+  background-color: #eee;
+}
+.h2w-light .h2w__mark {
+  background: yellow;
+  color: black;
+}
+/**代码高亮样式**/
+/*
+
+github.com style (c) Vasily Polovnyov <vast@whiteants.net>
+
+*/
+.h2w-light .hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #333;
+  background: #f8f8f8;
+}
+.h2w-light .hljs-comment,
+.h2w-light .hljs-quote {
+  color: #998;
+  font-style: italic;
+}
+.h2w-light .hljs-keyword,
+.h2w-light .hljs-selector-tag,
+.h2w-light .hljs-subst {
+  color: #333;
+  font-weight: bold;
+}
+.h2w-light .hljs-number,
+.h2w-light .hljs-literal,
+.h2w-light .hljs-variable,
+.h2w-light .hljs-template-variable,
+.h2w-light .hljs-tag .hljs-attr {
+  color: #008080;
+}
+.h2w-light .hljs-string,
+.h2w-light .hljs-doctag {
+  color: #d14;
+}
+.h2w-light .hljs-title,
+.h2w-light .hljs-section,
+.h2w-light .hljs-selector-id {
+  color: #900;
+  font-weight: bold;
+}
+.h2w-light .hljs-subst {
+  font-weight: normal;
+}
+.h2w-light .hljs-type,
+.h2w-light .hljs-class .hljs-title {
+  color: #458;
+  font-weight: bold;
+}
+.h2w-light .hljs-tag,
+.h2w-light .hljs-name,
+.h2w-light .hljs-attribute {
+  color: #000080;
+  font-weight: normal;
+}
+.h2w-light .hljs-regexp,
+.h2w-light .hljs-link {
+  color: #009926;
+}
+.h2w-light .hljs-symbol,
+.h2w-light .hljs-bullet {
+  color: #990073;
+}
+.h2w-light .hljs-built_in,
+.h2w-light .hljs-builtin-name {
+  color: #0086b3;
+}
+.h2w-light .hljs-meta {
+  color: #999;
+  font-weight: bold;
+}
+.h2w-light .hljs-deletion {
+  background: #fdd;
+}
+.h2w-light .hljs-addition {
+  background: #dfd;
+}
+.h2w-light .hljs-emphasis {
+  font-style: italic;
+}
+.h2w-light .hljs-strong {
+  font-weight: bold;
 }
 .detail_box {
   padding: 0 10px;
@@ -281,7 +419,6 @@ view {
   font-size: 28rpx;
   color: #828282;
   margin-top: 18px;
-  margin-bottom: 30px;
 }
 .wxParse-li-text {
   line-height: normal;
