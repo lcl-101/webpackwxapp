@@ -4,28 +4,27 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev:blog": "env NODE_ENV=development node_modules/.bin/webpack --env.target=blog",
-    "build:blog": "env NODE_ENV=production node_modules/.bin/webpack --env.target=blog --env.min",
-    "dev:lcl": "env NODE_ENV=development node_modules/.bin/webpack --env.target=lcl",
-    "build:lcl": "env NODE_ENV=production node_modules/.bin/webpack --env.target=lcl --env.min"
+    "dev": "env NODE_ENV=development node_modules/.bin/webpack --env.target=blog",
+    "build": "env NODE_ENV=production node_modules/.bin/webpack --env.target=blog --env.min"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "wxapp-webpack-plugin": "^0.18.0",
-    "webpack": "^3.5.5",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
     "babel-preset-es2015": "^6.24.1",
+    "copy-webpack-plugin": "^4.5.2",
+    "css-loader": "^0.28.11",
+    "file-loader": "1.1.11",
     "glob": "^7.1.2",
     "less": "^3.0.4",
-    "wxml-loader": "^0.2.2",
-    "file-loader": "1.1.11",
-    "css-loader": "^0.28.11",
     "less-loader": "^4.1.0",
+    "uglifyjs-webpack-plugin": "^1.2.5",
     "url-loader": "^1.0.1",
-    "uglifyjs-webpack-plugin": "^1.2.5"
+    "webpack": "^3.5.5",
+    "wxapp-webpack-plugin": "^0.18.0",
+    "wxml-loader": "^0.2.2"
   },
   "dependencies": {
     "lodash": "^4.17.10"

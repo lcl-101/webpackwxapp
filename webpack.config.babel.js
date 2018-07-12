@@ -3,6 +3,7 @@ import path,{resolve} from 'path';
 import glob from 'glob';
 import WXAppWebpackPlugin, { Targets } from 'wxapp-webpack-plugin';  //微信小程序 webpack 插件
 import UglifyJSPlugin from 'uglifyjs-webpack-plugin';  //代码压缩
+import CopyWebpackPlugin from "copy-webpack-plugin";  //问价拷贝
 
 //生成环境
 var plugins = [];
@@ -13,7 +14,6 @@ var isProduction = NODE_ENV ==='production' ? true : false;
 const ROOT_PATH = path.resolve(__dirname);
 const PATH_DIST = path.resolve(__dirname,'dist');
 const SRC_VIEW = path.resolve(__dirname,'src');
-const BLOG_VIEW = path.resolve(__dirname,'src/blog');
 
 //代码压缩
 if(isProduction){
@@ -37,11 +37,7 @@ export default (env = {}) => {
   const enterJsFile = glob.sync(SRC_VIEW + '/**/app.js');
   const enterJs = {};
   enterJsFile.forEach(function(filePath){
-    var l = filePath.split('/').length;
-    var n = filePath.split('/')[l-2];
-    if(env.target == n){
-      enterJs['app'] = filePath;
-    }
+    enterJs['app'] = filePath;
   });
 
   const relativeFileLoader = (ext = '[ext]') => {
@@ -59,7 +55,7 @@ export default (env = {}) => {
     output: {
       path: PATH_DIST,
       publicPath: '/',
-      filename: env.target+'/[name].js'
+      filename: '[name].js'
     },
     module: {
       rules:[
@@ -120,7 +116,14 @@ export default (env = {}) => {
     plugins: [
       new WXAppWebpackPlugin({
         clear:true
-      })
+      }),
+      new CopyWebpackPlugin([
+        {
+          from: __dirname + '/src/project.config.json',
+          to: __dirname + '/dist/project.config.json',
+          toType: 'file'
+        }
+      ])
     ].concat(plugins)
   }
 }
