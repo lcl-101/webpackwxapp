@@ -1,0 +1,19 @@
+<wxs module="m1">
+  var createTime = function(t){
+    return t.substring(0, 10);
+  }
+  module.exports = {
+    createTimes:createTime
+  };
+</wxs>
+<import src="../../wxParse/wxParse.wxml" />
+<view class="detail_box">
+  <view wx:if="{{loading}}" class="detail_load">
+    <image class="detail_img" mode="widthFix" src="../../images/load2.png"></image>
+  </view>
+  <view wx:if="{{ !loading && item.id == listId}}" wx:key="{{item.id}}" wx:for="{{listData}}" class="detail_con">
+    <text class="detail_title">{{item.title}}</text>
+    <text class="detail_time">{{m1.createTimes(item.created_at)}}</text>
+    <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+  </view>
+</view>

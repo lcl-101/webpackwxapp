@@ -1,0 +1,46 @@
+/**index.wxss**/
+.userinfo {
+  width: 100%;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.userinfo_img {
+  width: 240rpx;
+  height: 240rpx;
+  font-size: 0;
+  padding: 0;
+  margin: 20rpx;
+  overflow: hidden;
+}
+.userinfo-avatar {
+  float: left;
+  width: 240rpx;
+  height: 240rpx;
+}
+.userinfo-nickname {
+  font-size: 24rpx;
+  color: #aaa;
+}
+.usermotto {
+  width: 100%;
+  text-align: center;
+  margin-top: 15px;
+}
+.usermotto .user_link {
+  display: inline-block;
+  margin: 0 7px;
+  font-size: 30rpx;
+  color: #333333;
+}
+.navigator-hover {
+  color: blue;
+}
+/** 自定义其他点击态样式类 **/
+.other-navigator-hover {
+  color: red;
+}

@@ -1,0 +1,9 @@
+.footer_box {
+  position: absolute;
+  left: 0;
+  bottom:20rpx;
+  width: 100%;
+  color: #777;
+  text-align: center;
+  font-size: 28rpx;
+}

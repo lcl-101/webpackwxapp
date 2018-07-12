@@ -1,0 +1,17 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <block>
+      <view class="userinfo_img">
+        <image class="userinfo-avatar" src="../../images/6ae99450.png" background-size="cover"></image>
+      </view>
+      <text class="userinfo-nickname">{{name}}</text>
+    </block>
+    <view class="usermotto">
+      <navigator url="/pages/posts/posts" class="user_link" open-type="navigate" hover-class="navigator-hover">{{posts}}</navigator>
+      <navigator url="/pages/archive/archive" class="user_link" open-type="navigate" hover-class="navigator-hover">{{about}}</navigator>
+      <navigator url="/pages/label/label" class="user_link" open-type="navigate" hover-class="navigator-hover">{{tags}}</navigator>
+    </view>
+  </view>
+</view>
+<footer></footer>

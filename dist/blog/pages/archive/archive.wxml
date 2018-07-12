@@ -1,0 +1,27 @@
+<wxs module="m1">
+  var createTime = function(t){
+    return t.substring(0, 10);
+  }
+  var createTime2 = function(t){
+    return t.substring(0, 4);
+  }
+  module.exports = {
+    createTimes:createTime,
+    createTimes2:createTime2
+
+  };
+</wxs>
+<view class="posts_box">
+  <view wx:if="{{loading}}" class="posts_load">
+    <image class="posts_img" mode="widthFix" src="../../images/load1.png"></image>
+  </view>
+  <view wx:key="{{item.id}}" wx:for="{{typeData}}" class="">
+    <view class="posts_category">{{m1.createTimes2(item[0].created_at)}}</view>
+    <view wx:key="{{item.id}}" wx:for="{{item}}" >
+      <navigator url="/pages/detail/detail?id={{item.id}}" open-type="navigate" class="posts_list">
+        <text class="f_left">{{item.title}}</text>
+        <text class="r_left">{{m1.createTimes(item.created_at)}}</text>
+      </navigator>
+    </view>
+  </view>
+</view>

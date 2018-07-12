@@ -1,0 +1,1 @@
+function webpackJsonp(){require("./../../common.js"),wx.webpackJsonp.apply(null,arguments)}webpackJsonp([2],{10:function(n,o,a){"use strict";var t=a(11);Page({data:{logs:[]},onLoad:function(){this.setData({logs:(wx.getStorageSync("logs")||[]).map(function(n){return t.formatTime(new Date(n))})})}})}},[10]);
