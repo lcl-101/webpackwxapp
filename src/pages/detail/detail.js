@@ -31,7 +31,6 @@ Page({
     });
   },
   getList: function(id,data){
-    console.log(data);
     var that = this;
     that.setData({
       listId:id,
