@@ -20,6 +20,10 @@ Page({
     })
   },
   onLoad: function () {
+    //微信转发功能
+    wx.showShareMenu({
+      withShareTicket: true
+    });
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,

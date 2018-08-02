@@ -10,6 +10,10 @@ Page({
   },
   onLoad: function(){
     var that = this;
+    //微信转发功能
+    wx.showShareMenu({
+      withShareTicket: true
+    });
     if(!app.globalData.listDatas){
       wx.showLoading({
         title: '加载中',
