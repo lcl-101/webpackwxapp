@@ -15,6 +15,7 @@ Page({
     if(!app.globalData.listDatas){
       wx.showLoading({
         title: '加载中',
+        mask: true
       });
       that.getList(that.options.id,res.data);
     }else {
@@ -38,7 +39,6 @@ Page({
     var that = this;
     that.setData({
       listId:id,
-      loading:false,
       listData:data
     });
     for(var i=0;i<data.length;i++){
@@ -49,7 +49,8 @@ Page({
           //设置文档显示主题，默认'light'
           articdata.theme = 'light';
           that.setData({
-            artileDate:articdata
+            artileDate:articdata,
+            loading:false
           });
       }
     }

@@ -19,4 +19,5 @@
       </navigator>
     </view>
   </view>
+  <view style="width:100%;height:100rpx;"></view>
 </view>

@@ -15,4 +15,5 @@
     <text class="f_left">{{item.title}}</text>
     <text class="r_left">{{m1.createTimes(item.created_at)}}</text>
   </navigator>
+  <view style="width:100%;height:100rpx;"></view>
 </view>

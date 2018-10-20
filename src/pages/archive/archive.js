@@ -17,6 +17,7 @@ Page({
     if(!app.globalData.listDatas){
       wx.showLoading({
         title: '加载中',
+        mask: true
       });
       this.sendQuest(function(res){
         that.setData({
