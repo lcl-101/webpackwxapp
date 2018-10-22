@@ -51,6 +51,9 @@ Page({
     });
     for (var i = 0; i < data.length; i++) {
       if (that.options.id == data[i].id) {
+        wx.setNavigationBarTitle({
+          title: data[i].title
+        });
         var articles = data[i].body;
         //将markdown内容转换为towxml数据
         var articdata = app.towxml.toJson(articles, 'markdown');
