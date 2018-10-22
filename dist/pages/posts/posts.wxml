@@ -11,7 +11,7 @@
   <view wx:if="{{loading}}" class="posts_load">
     <image class="posts_img" mode="widthFix" src="../../images/load1.png"></image>
   </view>
-  <navigator wx:key="{{item.id}}" wx:for="{{list}}" url="/pages/detail/detail?id={{item.id}}" open-type="navigate" class="posts_list">
+  <navigator wx:key="{{item.id}}" wx:for="{{list}}" url="/pages/detail/detail?id={{item.id}}" open-type="navigate" class="posts_list" hover-class="bg_g">
     <text class="f_left">{{item.title}}</text>
     <text class="r_left">{{m1.createTimes(item.created_at)}}</text>
   </navigator>

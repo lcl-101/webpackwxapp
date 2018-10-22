@@ -8,9 +8,9 @@
       <text class="userinfo-nickname">{{name}}</text>
     </block>
     <view class="usermotto">
-      <navigator url="/pages/posts/posts" class="user_link" open-type="navigate" hover-class="navigator-hover">{{posts}}</navigator>
-      <navigator url="/pages/archive/archive" class="user_link" open-type="navigate" hover-class="navigator-hover">{{about}}</navigator>
-      <navigator url="/pages/label/label" class="user_link" open-type="navigate" hover-class="navigator-hover">{{tags}}</navigator>
+      <navigator url="/pages/posts/posts" class="user_link" open-type="navigate" hover-class="bg_g">{{posts}}</navigator>
+      <navigator url="/pages/archive/archive" class="user_link" open-type="navigate" hover-class="bg_g">{{about}}</navigator>
+      <navigator url="/pages/label/label" class="user_link" open-type="navigate" hover-class="bg_g">{{tags}}</navigator>
     </view>
   </view>
 </view>

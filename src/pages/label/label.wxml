@@ -13,7 +13,7 @@
   <view wx:key="{{item.id}}" wx:for="{{typeData}}" class="">
     <view class="posts_category">{{item[0].labels[0].name}}</view>
     <view wx:key="{{item.id}}" wx:for="{{item}}" >
-      <navigator url="/pages/detail/detail?id={{item.id}}" open-type="navigate" class="posts_list">
+      <navigator url="/pages/detail/detail?id={{item.id}}" open-type="navigate" class="posts_list" hover-class="bg_g">
         <text class="f_left">{{item.title}}</text>
         <text class="r_left">{{m1.createTimes(item.created_at)}}</text>
       </navigator>
