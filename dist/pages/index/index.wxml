@@ -11,6 +11,7 @@
       <navigator url="/pages/posts/posts" class="user_link" open-type="navigate" hover-class="bg_g">{{posts}}</navigator>
       <navigator url="/pages/archive/archive" class="user_link" open-type="navigate" hover-class="bg_g">{{about}}</navigator>
       <navigator url="/pages/label/label" class="user_link" open-type="navigate" hover-class="bg_g">{{tags}}</navigator>
+      <navigator url="/pages/demo/demo" class="user_link" open-type="navigate" hover-class="bg_g">{{demo}}</navigator>
     </view>
   </view>
 </view>

@@ -1,0 +1,8 @@
+<view class="preData">
+  <view class="con">
+    <view class="title">本用例监听页面滚轮事件,监听滚轮值得变化</view>
+    <view>没有使用节流函数 {{preData}}</view>
+    <view>使用了节流函数 {{afterData}}</view>
+  </view>
+</view>
+<view style="height:10000px"></view>

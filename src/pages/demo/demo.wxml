@@ -1,0 +1,8 @@
+<view class="posts_box">
+  <view class="posts_category">{{title}}</view>
+  <navigator  wx:for="{{list}}" wx:key="{{index}}" url="{{item.url}}" open-type="navigate" class="posts_list" hover-class="bg_g">
+    <text class="f_left">{{item.title}}</text>
+    <!-- <text class="r_left">{{m1.createTimes(item.created_at)}}</text> -->
+  </navigator>
+  <view style="width:100%;height:100rpx;"></view>
+</view>

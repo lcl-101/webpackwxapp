@@ -9,6 +9,7 @@ Page({
     about:'归档',
     project:'PROJECTS',
     tags:'标签',
+    demo:'用例',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
