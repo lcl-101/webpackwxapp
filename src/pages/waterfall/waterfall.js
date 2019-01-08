@@ -182,5 +182,14 @@ Page({
       wx.hideLoading();
       clearTimeout(t);
     }, 1000)
+  },
+  onUnload: function(){
+    col1H = 0;
+    col2H = 0;
+    this.setData({
+      col1: [],
+      col2: [],
+      images: ''
+    })
   }
 })
