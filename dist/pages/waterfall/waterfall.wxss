@@ -1,0 +1,18 @@
+.img_box {
+  width: 100%;
+}
+.img_box image {
+  width: 750rpx;
+}
+.masonry {
+  width: 100%;
+}
+.masonry .item {
+  width: 48%;
+  margin: 1%;
+  display: inline-block;
+  vertical-align: top;
+}
+.masonry .item image {
+  width: 100%;
+}

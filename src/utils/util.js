@@ -14,6 +14,15 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+const throttle = (method,delay) => {
+  var content = this, args = arguments;
+  clearTimeout(method.Id);
+  method.Id= setTimeout(function(){
+      method.apply(content,args);
+  },delay);
+}
+
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  throttle: throttle
 }

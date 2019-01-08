@@ -1,0 +1,17 @@
+<!-- 在页面上放一个隐藏区域，并用image组件去加载一个或多个图片资源 -->
+<view style="display:none" class="img_box">
+  <image wx:for="{{images}}" wx:key="id" id="{{item.id}}" src="{{item.pic}}" bindload="onImageLoad" mode="aspectFill"></image>
+</view>
+
+<view class="masonry">
+  <view class="item">
+    <block wx:for="{{col1}}" wx:key="{{index}}">
+      <image src="{{item.pic}}" style="height:{{item.height}}px"></image>
+    </block>
+  </view>
+  <view class="item">
+    <block wx:for="{{col2}}" wx:key="{{index}}">
+      <image src="{{item.pic}}" style="height:{{item.height}}px"></image>
+    </block>
+  </view>
+</view>
