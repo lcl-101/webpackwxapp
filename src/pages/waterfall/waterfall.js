@@ -121,7 +121,7 @@ Page({
     let oImgH = e.detail.height;        //图片原始高度
     let imgWidth = this.data.imgWidth;  //图片设置的宽度
     let scale = imgWidth / oImgW;        //比例计算
-    let imgHeight = oImgH * scale;      //自适应高度
+    let imgHeight = parseInt(oImgH * scale);      //自适应高度
 
     let imageObj = {};
 
@@ -168,10 +168,10 @@ Page({
       for(var i=0;i<this.data.images.length;i++){
         //判断当前图片添加到左列还是右列
         if (col1H <= col2H) {
-          col1H += this.data.images[i].height;
+          col1H += parseInt(this.data.images[i].height);
           col1.push(this.data.images[i]);
         } else {
-          col2H += this.data.images[i].height;
+          col2H += parseInt(this.data.images[i].height);
           col2.push(this.data.images[i]);
         }
       }
