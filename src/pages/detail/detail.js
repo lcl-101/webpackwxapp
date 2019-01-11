@@ -13,11 +13,10 @@ Page({
       withShareTicket: true
     });
     if(!app.globalData.listDatas){
-      wx.showLoading({
-        title: '加载中',
-        mask: true
+      this.sendQuest(function(res){
+        that.getList(that.options.id,res.data);
       });
-      that.getList(that.options.id,res.data);
+
     }else {
       that.getList(that.options.id,app.globalData.listDatas);
     }
@@ -66,7 +65,6 @@ Page({
       method:'GET',
       dataType:'json',
       success:function(res){
-        wx.hideLoading();
         if(res.statusCode == 200){
           if(callback){
             callback(res);
