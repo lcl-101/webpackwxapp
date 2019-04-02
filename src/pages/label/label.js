@@ -68,7 +68,6 @@ Page({
   getlistType: function(){
     var that = this;
     var data = {};
-    console.log(this);
     for(var i=0;i<this.data.label.length;i++){
       data[i]  = [];
       for(var j=0;j<this.data.list.length;j++){
@@ -77,7 +76,6 @@ Page({
         }
       }
     }
-    console.log(data);
     that.setData({
       typeData:data,
     });

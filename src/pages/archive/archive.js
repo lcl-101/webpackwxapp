@@ -62,14 +62,12 @@ Page({
     that.setData({
       date:Array.from(new Set(lableData))
     });
-    console.log(that);
     that.getlistType();
   },
   //对数据进行分类存储
   getlistType: function(){
     var that = this;
     var data = {};
-    console.log(this);
     for(var i=0;i<this.data.date.length;i++){
       data[i]  = [];
       for(var j=0;j<this.data.list.length;j++){
@@ -78,7 +76,6 @@ Page({
         }
       }
     }
-    console.log(data);
     that.setData({
       typeData:data,
     });

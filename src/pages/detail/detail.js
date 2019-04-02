@@ -21,19 +21,19 @@ Page({
       that.getList(that.options.id,app.globalData.listDatas);
     }
   },
-  onPullDownRefresh: function(){
-    var that = this;
-    that.setData({
-      listData:'',
-      loading:true,
-    });
-    wx.showNavigationBarLoading() //在标题栏中显示加载
-    this.sendQuest(function(res){
-      that.getList(that.options.id,res.data);
-      wx.hideNavigationBarLoading() //完成停止加载
-      wx.stopPullDownRefresh() //停止下拉刷新
-    });
-  },
+  // onPullDownRefresh: function(){
+  //   var that = this;
+  //   that.setData({
+  //     listData:'',
+  //     loading:true,
+  //   });
+  //   wx.showNavigationBarLoading() //在标题栏中显示加载
+  //   this.sendQuest(function(res){
+  //     that.getList(that.options.id,res.data);
+  //     wx.hideNavigationBarLoading() //完成停止加载
+  //     wx.stopPullDownRefresh() //停止下拉刷新
+  //   });
+  // },
   getList: function(id,data){
     var that = this;
     that.setData({
