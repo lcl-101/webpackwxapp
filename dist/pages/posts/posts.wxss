@@ -28,6 +28,10 @@
 }
 .f_left {
   float: left;
+  max-width: 500rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .r_left {
   float: right;
