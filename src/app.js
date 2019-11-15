@@ -1,5 +1,12 @@
 //app.js
 const Towxml = require('./towxml/main');
+const monitor = require('./agent/tingyun-mp-agent.js');
+monitor.config({
+  beacon: 'https://beacon-mp.tingyun.com',
+  key: '0zhS-FE-mXY',
+  id: '3nBqvz8E6b4',
+  sampleRate: 1
+});
 App({
   onLaunch: function () {
     // 展示本地存储能力
