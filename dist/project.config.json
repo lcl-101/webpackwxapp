@@ -11,6 +11,8 @@
 	"libVersion": "2.1.1",
 	"appid": "wxa9a28dd70f8ccb6b",
 	"projectname": "lcl",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
